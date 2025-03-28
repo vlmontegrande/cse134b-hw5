@@ -1,83 +1,111 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Projects</title>
-        <link rel="stylesheet" href="assets/css/projects.css">
-        <script defer src="assets/js/theme.js"></script>
-        <script defer src="assets/js/search.js"></script>
-    </head>
-    <body>
-        <header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Vince Montegrande</title>
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+    <script defer src="assets/js/shared.js"></script>
+    <script defer src="assets/js/search.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
             <nav>
-                <a href="/" id="main-link">Vince Montegrande</a>
-                <ul id="menu">
-                    <li><a href="projects" id="projects-link">Projects</a></li>
+                <a href="/" class="logo">Vince Montegrande</a>
+                <ul class="nav-links">
+                    <li><a href="projects" class="active">Projects</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="contact">Contact</a></li>
-                    <svg width="24" height="24" viewBox="0 0 24 24" id="theme-toggle">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-9 1.732a8 8 0 0 0 4.001 14.928l-.001 -16a8 8 0 0 0 -4 1.072" />
-                    </svg>
+                    <li>
+                        <button id="theme-toggle" aria-label="Toggle dark mode">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-9 1.732a8 8 0 0 0 4.001 14.928l-.001 -16a8 8 0 0 0 -4 1.072" />
+                            </svg>
+                        </button>
+                    </li>
                 </ul>
-                <svg viewBox="0 0 100 80" width="40" height="40" id="hamburger-menu">
-                    <rect width="100" height="20" rx="8"></rect>
-                    <rect y="30" width="100" height="20" rx="8"></rect>
-                    <rect y="60" width="100" height="20" rx="8"></rect>
-                </svg>
+                <button class="hamburger" id="hamburger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <hr>
-
-        <main>
-            <header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
                 <h1>Projects</h1>
-                <search>
-                    <form>
-                        <label for="project-search">Find a project</label>
-                        <span id="search-container">
-                            <input type="search" id="project-search" name="project-search">
-                            <button type="submit">Search</button>
-                        </span>
+                <p class="subtitle">Check out my latest work</p>
+            </div>
+        </section>
+
+        <section class="projects-content">
+            <div class="container">
+                <div class="search-container">
+                    <form class="search-form">
+                        <label for="project-search" class="form-label">Find a project</label>
+                        <div class="search-input-group">
+                            <input type="search" id="project-search" name="project-search" class="form-control" placeholder="Search projects...">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
                     </form>
-                </search>
-            </header>
+                </div>
 
-            <section id="projects-container">
-                <section class="project-container">
-                    <hgroup>
-                        <h2 class="project-title">
-                            CSE134B Homework 1
-                        </h2>
-                        <p class="project-description">
-                            This was a project to modify a site, host it on Netlify, and play around with it.
-                        </p>
-                    </hgroup>
-                    <a target="_blank" href="https://regal-wisp-91b064.netlify.app/"><img src="assets/images/hw1-screenshot-min.png" alt="Image of website page"></a>
-                </section>
+                <div class="projects-grid" id="projects-container">
+                    <div class="project-card card" data-animate>
+                        <div class="project-image">
+                            <img src="assets/images/hw1-screenshot-min.png" alt="Image of website page">
+                            <div class="project-overlay">
+                                <a href="https://regal-wisp-91b064.netlify.app/" target="_blank" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h2 class="project-title">CSE134B Homework 1</h2>
+                            <p class="project-description">
+                                This was a project to modify a site, host it on Netlify, and play around with it.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <section class="project-container">
-                    <hgroup>
-                        <h2 class="project-title">
-                            Smoothbrain
-                        </h2>
-                        <p class="project-description">
-                            This is a WIP website built with React and Next.js. It is a Jackbox clone with custom UI and backend.
-                        </p>
-                    </hgroup>
-                    <a target="_blank" href="https://github.com/amanat361/smoothbrain"><img src="assets/images/smoothbrain.png" alt="A screenshot of the Smoothbrain UI"></a>
-                </section>
-            </section>
-        </main>
+                    <div class="project-card card" data-animate>
+                        <div class="project-image">
+                            <img src="assets/images/smoothbrain.png" alt="A screenshot of the Smoothbrain UI">
+                            <div class="project-overlay">
+                                <a href="https://github.com/amanat361/smoothbrain" target="_blank" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h2 class="project-title">Smoothbrain</h2>
+                            <p class="project-description">
+                                This is a WIP website built with React and Next.js. It is a Jackbox clone with custom UI and backend.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Next.js</span>
+                                <span class="tag">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <hr>
-
-        <footer>
-            <a href="https://github.com/vlmontegrande/cse134b-hw2.git">Website Github</a>
-            <p><small>&copy; 2025 Vince Montegrande</small></p>
-        </footer>
-    </body>
+    <footer>
+        <div class="container">
+            <a href="https://github.com/vlmontegrande/cse134b-hw2.git" class="github-link">Website Github</a>
+            <p class="copyright">&copy; 2025 Vince Montegrande</p>
+        </div>
+    </footer>
+</body>
 </html>

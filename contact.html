@@ -1,77 +1,154 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact</title>
-        <link rel="stylesheet" href="assets/css/contact.css">
-        <script defer src="assets/js/form.js"></script>
-        <script defer src="assets/js/theme.js"></script>
-    </head>
-    <body>
-        <header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Vince Montegrande</title>
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <script defer src="assets/js/shared.js"></script>
+    <script defer src="assets/js/form.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
             <nav>
-                <a href="/" id="main-link">Vince Montegrande</a>
-                <ul>
+                <a href="/" class="logo">Vince Montegrande</a>
+                <ul class="nav-links">
                     <li><a href="projects">Projects</a></li>
                     <li><a href="about">About</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <svg width="24" height="24" viewBox="0 0 24 24" id="theme-toggle">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-9 1.732a8 8 0 0 0 4.001 14.928l-.001 -16a8 8 0 0 0 -4 1.072" />
-                    </svg>
+                    <li><a href="contact" class="active">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" aria-label="Toggle dark mode">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-9 1.732a8 8 0 0 0 4.001 14.928l-.001 -16a8 8 0 0 0 -4 1.072" />
+                            </svg>
+                        </button>
+                    </li>
                 </ul>
-                <svg viewBox="0 0 100 80" width="40" height="40" id="hamburger-menu">
-                    <rect width="100" height="20" rx="8"></rect>
-                    <rect y="30" width="100" height="20" rx="8"></rect>
-                    <rect y="60" width="100" height="20" rx="8"></rect>
-                </svg>
+                <button class="hamburger" id="hamburger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <hr>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Contact</h1>
+                <p class="subtitle">Get in touch with me</p>
+            </div>
+        </section>
 
-        <main>
-            <form method="GET" action="https://httpbin.org/get">
-                <fieldset>
-                        <legend>Contact</legend>
-                
-                        <label for="name">Name*:</label>
-                        <input type="text" id="name" name="name" pattern="[a-zA-Z\s]+" required>
-                
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email">
+        <section class="contact-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8" data-animate>
+                        <div class="card contact-form-card">
+                            <h2>Send a Message</h2>
+                            <form method="GET" action="https://httpbin.org/get" class="contact-form">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Name*</label>
+                                    <input type="text" id="name" name="name" class="form-control" pattern="[a-zA-Z\s]+" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" name="email" class="form-control">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message*</label>
+                                    <textarea id="message" name="message" rows="6" maxlength="280" class="form-control" required></textarea>
+                                    <div class="character-count">
+                                        <span id="characters-remaining">280</span> characters remaining
+                                    </div>
+                                </div>
 
-                        <label for="message">Message*:</label>
-                        <textarea id="message" name="message" rows="4" maxlength="280" required></textarea>
+                                <input id="possible_bot" name="possible_bot" value="true" hidden>
 
-                        <input id="possible_bot" name="possible_bot" value="true" hidden>
+                                <noscript>
+                                    <div class="alert alert-warning">
+                                        Name must only use letters and spaces, Email must be valid, and Message must be less than 280 characters
+                                    </div>
+                                </noscript>
 
-                        <noscript>Name must only use letters and spaces, Email must be valid, and Message must be less than 280 characters</noscript>
-
-                        <output id="info-output"></output>
-                        <output id="error-output"></output>
+                                <div class="form-feedback">
+                                    <output id="info-output" class="info-message"></output>
+                                    <output id="error-output" class="error-message"></output>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
                     
-                        <button type="submit">Submit</button>
-                </fieldset>
-            </form>
-            <address>
-                <div id="address-container">
-                    <h1>Social and Professional Links</h1>
-                    <p>Email: <a target="_blank" href="mailto:vlmontegrande@gmail.com">vlmontegrande@gmail.com</a></p>
-                    <p>Github: <a target="_blank" href="https://github.com/vlmontegrande">vlmontegrande</a></p>
-                    <p>Instagram: <a target="_blank" href="https://www.instagram.com/vince_montegrande/">vince_montegrande</a></p>
-                    <p>Resume: <a target="_blank" href="assets/misc/resume.pdf">pdf</a></p>
+                    <div class="col-lg-4" data-animate>
+                        <div class="card contact-info-card">
+                            <h2>Connect With Me</h2>
+                            <address>
+                                <ul class="contact-links">
+                                    <li>
+                                        <div class="contact-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                                <polyline points="22,6 12,13 2,6"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Email:</span>
+                                        <a target="_blank" href="mailto:vlmontegrande@gmail.com">vlmontegrande@gmail.com</a>
+                                    </li>
+                                    <li>
+                                        <div class="contact-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                            </svg>
+                                        </div>
+                                        <span>Github:</span>
+                                        <a target="_blank" href="https://github.com/vlmontegrande">vlmontegrande</a>
+                                    </li>
+                                    <li>
+                                        <div class="contact-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                            </svg>
+                                        </div>
+                                        <span>Instagram:</span>
+                                        <a target="_blank" href="https://www.instagram.com/vince_montegrande/">vince_montegrande</a>
+                                    </li>
+                                    <li>
+                                        <div class="contact-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                                <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span>Resume:</span>
+                                        <a target="_blank" href="assets/misc/resume.pdf">Download PDF</a>
+                                    </li>
+                                </ul>
+                            </address>
+                        </div>
+                    </div>
                 </div>
-            </address>
-        </main>
+            </div>
+        </section>
+    </main>
 
-        <hr>
-
-        <footer>
-            <a href="https://github.com/vlmontegrande/cse134b-hw2.git">Website Github</a>
-            <p><small>&copy; 2025 Vince Montegrande</small></p>
-        </footer>
-    </body>
+    <footer>
+        <div class="container">
+            <a href="https://github.com/vlmontegrande/cse134b-hw2.git" class="github-link">Website Github</a>
+            <p class="copyright">&copy; 2025 Vince Montegrande</p>
+        </div>
+    </footer>
+</body>
 </html>

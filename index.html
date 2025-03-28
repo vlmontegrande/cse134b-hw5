@@ -1,55 +1,99 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vince Montegrande</title>
-        <link rel="stylesheet" href="assets/css/index.css">
-        <script defer src="assets/js/theme.js"></script>
-    </head>
-    <body>
-        <header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vince Montegrande | Portfolio</title>
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script defer src="assets/js/shared.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
             <nav>
-                <div>
-                    <a href="/" id="main-link">Vince Montegrande</a>
-                </div>
-                <ul>
+                <a href="/" class="logo">Vince Montegrande</a>
+                <ul class="nav-links">
                     <li><a href="projects">Projects</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="contact">Contact</a></li>
-                    <svg width="24" height="24" viewBox="0 0 24 24" id="theme-toggle">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-9 1.732a8 8 0 0 0 4.001 14.928l-.001 -16a8 8 0 0 0 -4 1.072" />
-                    </svg>
+                    <li>
+                        <button id="theme-toggle" aria-label="Toggle dark mode">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-9 1.732a8 8 0 0 0 4.001 14.928l-.001 -16a8 8 0 0 0 -4 1.072" />
+                            </svg>
+                        </button>
+                    </li>
                 </ul>
-                <svg viewBox="0 0 100 80" width="40" height="40" id="hamburger-menu">
-                    <rect width="100" height="20" rx="8"></rect>
-                    <rect y="30" width="100" height="20" rx="8"></rect>
-                    <rect y="60" width="100" height="20" rx="8"></rect>
-                </svg>
+                <button class="hamburger" id="hamburger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <hr>
-
-        <main>
-            <div id="image-container">
-                <img src="assets/images/looking-off.png" alt="Picture of me, Vince Montegrande">
-            </div>
-            <div id="text-container">
-                <div id="text-block">
-                    <p>I'm <strong>Vince Montegrande</strong>, a college student and aspiring web developer!</p>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Vince Montegrande</h1>
+                <p class="subtitle">College student & aspiring web developer</p>
+                <div class="hero-buttons">
+                    <a href="projects" class="btn btn-primary">View Projects</a>
+                    <a href="contact" class="btn btn-outline-primary">Contact Me</a>
                 </div>
             </div>
-        </main>
+            <div class="hero-image">
+                <img src="assets/images/looking-off.png" alt="Picture of me, Vince Montegrande">
+            </div>
+        </section>
 
-        <hr>
+        <section class="home-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6" data-animate>
+                        <div class="card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <h2>My Skills</h2>
+                            <p>
+                                I specialize in <span class="highlight">HTML, CSS, and Javascript</span>, and also work with 
+                                <span class="highlight">React, Tailwind, and Next.js</span>. I'm passionate about creating 
+                                clean, responsive, and user-friendly web experiences.
+                            </p>
+                            <a href="about" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-animate>
+                        <div class="card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <h2>Recent Projects</h2>
+                            <p>
+                                Check out my latest web development projects. I've been working on various applications 
+                                that showcase my skills in frontend development and UI/UX design.
+                            </p>
+                            <a href="projects" class="btn btn-outline-primary">View Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <footer>
-            <a href="https://github.com/vlmontegrande/cse134b-hw3.git">Website Github</a>
-            <!--Apparently <small> is for copyright. I'm so semantic rn-->
-            <p><small>&copy; 2025 Vince Montegrande</small></p>
-        </footer>
-    </body>
+    <footer>
+        <div class="container">
+            <a href="https://github.com/vlmontegrande/cse134b-hw3.git" class="github-link">Website Github</a>
+            <p class="copyright">&copy; 2025 Vince Montegrande</p>
+        </div>
+    </footer>
+</body>
 </html>

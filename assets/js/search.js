@@ -1,23 +1,28 @@
-function searchProjects(query) {
-    let projects = document.querySelectorAll('.project-container');
-    query = query.toLowerCase();
-    projects.forEach(project => {
-        console.log(project);
-        let title = project.querySelector(".project-title").textContent.toLowerCase();
-        let description = project.querySelector(".project-description").textContent.toLowerCase();
-        if(title.includes(query) || description.includes(query)) {
-            project.style.display = "flex";
-        } else {
-            project.style.display = "none";
-        }
-    });
-}
+document.addEventListener('DOMContentLoaded', function() {
+    function searchProjects(query) {
+        let projects = document.querySelectorAll('.project-card');
+        query = query.toLowerCase();
+        
+        projects.forEach(project => {
+            let title = project.querySelector(".project-title").textContent.toLowerCase();
+            let description = project.querySelector(".project-description").textContent.toLowerCase();
+            
+            if(title.includes(query) || description.includes(query)) {
+                project.style.display = "flex";
+            } else {
+                project.style.display = "none";
+            }
+        });
+    }
 
-let search = document.querySelector('search');
-search.style.display = "block";
-
-search.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let query = document.querySelector("#project-search").value;
-    searchProjects(query);
+    // Get the search input
+    const searchInput = document.querySelector("#project-search");
+    
+    if (searchInput) {
+        // Add input event listener to make search real-time
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value;
+            searchProjects(query);
+        });
+    }
 });
